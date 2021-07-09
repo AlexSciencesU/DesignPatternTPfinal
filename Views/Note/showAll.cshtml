@@ -4,26 +4,32 @@
     ViewBag.Title = "toute les notes";
 }
 
-<div class="jumbotron">
-    <h1>Liste des notes</h1>
-    <p class="lead">Magnifique gestionnaire de notes</p>
-</div>
 
-<div class="row">
-    @{
-        foreach (var item in Model.Notes)
-        {
-            <div class="col-md-4">
-                <h2>@item.Titre</h2>
-                @if (item.Date != DateTime.MinValue)
+<div class="container loc-margin-top">
+    <h1>Notes</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Titre</th>
+                <th scope="col">Date</th>
+                <th scope="col">Type</th>
+                <th scope="col">Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                foreach (var item in Model.Notes)
                 {
-                    <h4>@item.Date</h4>
+                    <tr>
+                        <th scope="row"><a href="">@item.Id</a></th>
+                        <td>@item.Titre</td>
+                        <td>@item.Date != DateTime.MinValue ? @item.Date : ""</td>
+                        <td>@item.Type</td>
+                        <td>@item.Description.Substring(0, 50) ...</td>
+                    </tr>
                 }
-                <p>
-                    @item.Description
-                </p>
-                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-            </div>
-        }
-    }
+            }
+        </tbody>
+    </table>
 </div>

@@ -28,12 +28,12 @@ namespace DesignPatternTPfinal.Controllers
             var noteModel = new NoteIndex();
             foreach (var noteEntity in DbEntities.DbNotesEntities.Note.ToList())
             {
-                if (noteEntity.Type == 1)
+                if (noteEntity.Type == 0)
                 {
                     NoteProBuilder builderPro = new NoteProBuilder();
                     noteModel.Notes.Add(builderPro.ConvertType(noteEntity));
                 }
-                else if (noteEntity.Type == 2)
+                else if (noteEntity.Type == 1)
                 {
                     NotePersoBuilder builderPro = new NotePersoBuilder();
                     noteModel.Notes.Add(builderPro.ConvertType(noteEntity));

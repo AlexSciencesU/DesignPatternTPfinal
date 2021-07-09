@@ -10,7 +10,7 @@ namespace DesignPatternTPfinal.Models
     {
         public override NoteModel ConvertType(Note note)
         {
-            return new NoteModel(note.Id, note.Titre, note.Description, note.Date, "PRO");
+            return new NoteModel(note.Id, note.Description, note.Titre, note.Date, "PRO");
         }
     }
 }
