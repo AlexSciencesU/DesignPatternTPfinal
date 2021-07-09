@@ -134,7 +134,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\NoteBuilder.cs" />
     <Compile Include="Models\NoteIndex.cs" />
     <Compile Include="Models\NotePersoBuilder.cs" />
