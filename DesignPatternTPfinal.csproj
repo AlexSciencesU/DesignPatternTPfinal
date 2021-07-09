@@ -214,6 +214,7 @@
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Note\Index.cshtml" />
+    <Content Include="Views\Note\showAll.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
