@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DesignPatternTPfinal.Entities;
+using DesignPatternTPfinal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +13,11 @@ namespace DesignPatternTPfinal.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            return View();
+            var noteModel = new NoteIndex();
+
+            noteModel.Notes = DbEntities.DbNotesEntities.Note.Take(3).Select(n => new Models.Note() { Id = n.Id, Description = n.Description, Titre = n.Titre, Date = n.Date ?? DateTime.MinValue }).ToList();
+
+            return View(noteModel);
         }
     }
 }
