@@ -135,6 +135,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Note.cs" />
+    <Compile Include="Models\NoteBuilder.cs" />
+    <Compile Include="Models\NotePersoBuilder.cs" />
+    <Compile Include="Models\NoteProBuilder.cs" />
     <Compile Include="Note.cs">
       <DependentUpon>NotesDb.tt</DependentUpon>
     </Compile>
@@ -214,10 +218,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Note\Index.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Views\Note\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
