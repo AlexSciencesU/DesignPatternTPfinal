@@ -136,6 +136,7 @@
     </Compile>
     <Compile Include="Models\NoteModel.cs" />
     <Compile Include="Models\NoteBuilder.cs" />
+    <Compile Include="Models\NoteIndex.cs" />
     <Compile Include="Models\NotePersoBuilder.cs" />
     <Compile Include="Models\NoteProBuilder.cs" />
     <Compile Include="Note.cs">

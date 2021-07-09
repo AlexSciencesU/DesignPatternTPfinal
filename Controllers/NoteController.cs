@@ -26,7 +26,11 @@ namespace DesignPatternTPfinal.Controllers
                 builderPerso.ConvertType(note);
             }
 
-            return View();
+            var noteModel = new NoteIndex();
+
+            noteModel.Notes = DbEntities.DbNotesEntities.Note.Take(3).Select(n => new Models.Note() { Id = n.Id, Description = n.Description, Titre = n.Titre, Date = n.Date ?? DateTime.MinValue }).ToList();
+
+            return View(noteModel);
         }
     }
 }
