@@ -1,6 +1,29 @@
-﻿
+﻿@model DesignPatternTPfinal.Models.NoteIndex
+
 @{
-    ViewBag.Title = "Toutes les notes";
+    ViewBag.Title = "toute les notes";
 }
 
+<div class="jumbotron">
+    <h1>Liste des notes</h1>
+    <p class="lead">Magnifique gestionnaire de notes</p>
+</div>
 
+<div class="row">
+    @{
+        foreach (var item in Model.Notes)
+        {
+            <div class="col-md-4">
+                <h2>@item.Titre</h2>
+                @if (item.Date != DateTime.MinValue)
+                {
+                    <h4>@item.Date</h4>
+                }
+                <p>
+                    @item.Description
+                </p>
+                <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+            </div>
+        }
+    }
+</div>
