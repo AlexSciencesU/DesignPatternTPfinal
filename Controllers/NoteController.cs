@@ -13,13 +13,14 @@ namespace DesignPatternTPfinal.Controllers
         // GET: Note
         public ActionResult Index()
         {
-            NoteModel note = DbEntities.DbNotesEntities.Note.FirstOrDefault();
-            if(note.Type == 1)
+            var noteEntity = DbEntities.DbNotesEntities.Note.FirstOrDefault();
+            NoteModel note = new NoteModel(noteEntity.Id, noteEntity.Description, noteEntity.Titre, noteEntity.Date, noteEntity.Type)
+            if(note.Type == "1")
             {
                 NoteProBuilder builderPro = new NoteProBuilder();
                 builderPro.ConvertType(note);
             }
-            else if(note.Type == 2)
+            else if(note.Type == "2")
             {
                 NotePersoBuilder builderPerso = new NotePersoBuilder();
                 builderPerso.ConvertType(note);
