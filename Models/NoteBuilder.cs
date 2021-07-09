@@ -7,12 +7,12 @@ namespace DesignPatternTPfinal.Models
 {
     public abstract class NoteBuilder
     {
-        protected Note note;
-        public Note Note
+        protected NoteModel note;
+        public NoteModel Note
         {
             get { return note; }
         }
 
-        public abstract void ConvertType();
+        public abstract void ConvertType(NoteModel note);
     }
 }

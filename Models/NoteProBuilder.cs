@@ -8,11 +8,9 @@ namespace DesignPatternTPfinal.Models
 {
     public class NoteProBuilder : NoteBuilder
     {
-        public override void ConvertType()
+        public override void ConvertType(NoteModel note)
         {
-            var note = DbEntities.DbNotesEntities.Note.FirstOrDefault();
-            
-
+            note.Type = "PRO";
         }
     }
 }
