@@ -1,9 +1,7 @@
 ﻿using DesignPatternTPfinal.Entities;
 using DesignPatternTPfinal.Models;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
 
 namespace DesignPatternTPfinal.Controllers
@@ -17,25 +15,21 @@ namespace DesignPatternTPfinal.Controllers
         /// <returns></returns>
         public ActionResult Index()
         {
-
-
             var noteModel = new NoteIndex()
             {
                 Notes = DbEntities.DbNotesEntities.Note.Where(x => x.Type == 0).Take(3).Select(n => new NoteModel() { Id = n.Id, Description = n.Description, Titre = n.Titre, Date = n.Date ?? DateTime.MinValue }).ToList()
-
             };
 
             return View(noteModel);
         }
 
-        public ActionResult showAll()
+        public ActionResult ShowAll()
         {
             var noteModel = new NoteIndex();
             foreach (var noteEntity in DbEntities.DbNotesEntities.Note.ToList())
             {
                 if (noteEntity.Type == 1)
                 {
-                    
                     NoteProBuilder builderPro = new NoteProBuilder();
                     noteModel.Notes.Add(builderPro.ConvertType(noteEntity));
                 }
@@ -45,7 +39,7 @@ namespace DesignPatternTPfinal.Controllers
                     noteModel.Notes.Add(builderPro.ConvertType(noteEntity));
                 }
             }
-            
+
             return View(noteModel);
         }
     }
