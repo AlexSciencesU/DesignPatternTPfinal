@@ -7,6 +7,6 @@ namespace DesignPatternTPfinal.Models
 {
     public class NoteIndex
     {
-        public List<Note> Notes { get; set; } = new List<Note>();
+        public List<NoteModel> Notes { get; set; } = new List<NoteModel>();
     }
 }

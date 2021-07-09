@@ -10,26 +10,35 @@ namespace DesignPatternTPfinal.Controllers
 {
     public class NoteController : Controller
     {
-        // GET: Note
+        /// <summary>
+        /// GET: Note
+        /// Retourne 3 notes publiques (Type =0)
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
-            NoteModel note = DbEntities.DbNotesEntities.Note.FirstOrDefault();
-            if(note.Type == 1)
+            var noteModel = new NoteIndex
             {
-                NoteProBuilder builderPro = new NoteProBuilder();
-                builderPro.ConvertType(note);
-            }
-            else if(note.Type == 2)
-            {
-                NotePersoBuilder builderPerso = new NotePersoBuilder();
-                builderPerso.ConvertType(note);
-            }
-
-            var noteModel = new NoteIndex();
-
-            noteModel.Notes = DbEntities.DbNotesEntities.Note.Take(3).Select(n => new Models.Note() { Id = n.Id, Description = n.Description, Titre = n.Titre, Date = n.Date ?? DateTime.MinValue }).ToList();
+                Notes = DbEntities.DbNotesEntities.Note.Where(x=>x.Type ==0).Take(3).Select(n => new NoteModel() { Id = n.Id, Description = n.Description, Titre = n.Titre, Date = n.Date ?? DateTime.MinValue }).ToList()
+            };
 
             return View(noteModel);
+        }
+
+        public ActionResult showAll()
+        {
+            //NoteModel note = DbEntities.DbNotesEntities.Note.FirstOrDefault();
+            //if (note.Type == 1)
+            //{
+            //    NoteProBuilder builderPro = new NoteProBuilder();
+            //    builderPro.ConvertType(note);
+            //}
+            //else if (note.Type == 2)
+            //{
+            //    NotePersoBuilder builderPerso = new NotePersoBuilder();
+            //    builderPerso.ConvertType(note);
+            //}
+            return View();
         }
     }
 }
