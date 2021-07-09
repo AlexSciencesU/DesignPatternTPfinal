@@ -8,9 +8,9 @@ namespace DesignPatternTPfinal.Models
 {
     public class NoteProBuilder : NoteBuilder
     {
-        public override void ConvertType(NoteModel note)
+        public override NoteModel ConvertType(Note note)
         {
-            note.Type = "PRO";
+            return new NoteModel(note.Id, note.Titre, note.Description, note.Date, "PRO");
         }
     }
 }

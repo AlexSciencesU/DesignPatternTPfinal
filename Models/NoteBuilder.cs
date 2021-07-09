@@ -13,6 +13,6 @@ namespace DesignPatternTPfinal.Models
             get { return note; }
         }
 
-        public abstract void ConvertType(NoteModel note);
+        public abstract NoteModel ConvertType(Note note);
     }
 }

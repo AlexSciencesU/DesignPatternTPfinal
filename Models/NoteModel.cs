@@ -21,5 +21,10 @@ namespace DesignPatternTPfinal.Models
             this.Date = date;
             this.Type = type;
         }
+
+        public NoteModel()
+        {
+
+        }
     }
 }

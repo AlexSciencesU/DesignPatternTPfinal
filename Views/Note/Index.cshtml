@@ -15,7 +15,7 @@
         {
         <div class="col-md-4">
             <h2>@item.Titre</h2>
-            @if (item.Date == DateTime.MinValue)
+            @if (item.Date != DateTime.MinValue)
             {
                 <h4>@item.Date</h4>
             }
